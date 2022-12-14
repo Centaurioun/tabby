@@ -38,11 +38,6 @@ deepmerge@^4.1.1:
   resolved "https://registry.yarnpkg.com/deepmerge/-/deepmerge-4.2.2.tgz#44d2ea3679b8f4d4ffba33f03d865fc1e7bf4955"
   integrity sha512-FJ3UgI4gIl+PHZm53knsuSFpE+nESMr7M4v9QcgB7S63Kj/6WqMiFQJpBBYz1Pt+66bZpP3Q7Lye0Oo9MPKEdg==
 
-"filesize@>= 4.0.0":
-  version "6.3.0"
-  resolved "https://registry.yarnpkg.com/filesize/-/filesize-6.3.0.tgz#dff53cfb3f104c9e422f346d53be8dbcc971bf11"
-  integrity sha512-ytx0ruGpDHKWVoiui6+BY/QMNngtDQ/pJaFwfBpQif0J63+E8DLdFyqS3NkKQn7vIruUEpoGD9JUJSg7Kp+I0g==
-
 https-proxy-agent@5.0.0:
   version "5.0.0"
   resolved "https://registry.yarnpkg.com/https-proxy-agent/-/https-proxy-agent-5.0.0.tgz#e2a90542abb68a762e0a0850f6c9edadfd8506b2"
@@ -106,13 +101,12 @@ ms@2.1.2:
   resolved "https://registry.yarnpkg.com/ms/-/ms-2.1.2.tgz#d09d1f357b443f493382a8eb3ccd183872ae6009"
   integrity sha512-sGkPx+VjMtmA6MX27oA4FBFELFCZZ4S4XqeGOXCv68tT+jb3vk/RyaKWP0PTKyWtmLSM0b+adUTEvbs1PEaH2w==
 
-ngx-filesize@^2.0.16:
-  version "2.0.16"
-  resolved "https://registry.yarnpkg.com/ngx-filesize/-/ngx-filesize-2.0.16.tgz#fdaba04170edb6cfcdf7be932783cf913b03f016"
-  integrity sha512-VdaCirE7hSyfQh8ZEmhzNEhbddiTYUHF4V6OX+KyTmnQSVx4hp9kmzDX5YlkIlmClI6wI+LZmH9/q7XS3fsMPA==
+ngx-filesize@^3.0.1:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/ngx-filesize/-/ngx-filesize-3.0.1.tgz#620933ae181a1128905404e43b26abb99accba90"
+  integrity sha512-792I4fiG9EEPYjGib2+YTYAzfWIlccfy8uXNSXFFepuAntoS+eijLwnl0m7ajcQuNgbTtwEf9VmYIPN8mS3jqQ==
   dependencies:
-    filesize ">= 4.0.0"
-    tslib "^2.0.0"
+    tslib "^2.3.0"
 
 ngx-perfect-scrollbar@^10.1.0:
   version "10.1.1"
