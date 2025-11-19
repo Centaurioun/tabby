@@ -21,12 +21,14 @@ pull_request_rules:
       delete_head_branch: {}
 
   # -----------------------------------------------------------
-  # RULE 2: OTHER AI AGENTS (Copilot, Gemini, Codex)
+  # RULE 2: OTHER AI AGENTS (Copilot, Gemini, Codex, CodeRabbit)
   # -----------------------------------------------------------
   - name: Automatic merge for AI Agents
     conditions:
-      # Matches specific AI bots. 
-      - "author~=^(.*copilot.*|.*gemini.*|.*codex.*)$"
+      # STRICT REGEX: Matches only specific trusted bot names.
+      # ^...$ ensures we match the exact name, not "fake-copilot".
+      # (\[bot\])? matches the optional "[bot]" suffix GitHub adds.
+      - "author~=^(copilot|gemini-code-assist|chatgpt-codex-connector|codex-bot|coderabbitai)(\\[bot\\])?$"
       
       - label!=do-not-merge
       - base=master      
