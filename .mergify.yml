@@ -1,14 +1,66 @@
 pull_request_rules:
-  - name: automatic merge on CI success and review
+  # -----------------------------------------------------------
+  # RULE 1: DEPENDABOT
+  # -----------------------------------------------------------
+  - name: Automatic merge for Dependabot pull requests
     conditions:
-    - "status-success=Windows Build / Build"
-    - "status-success=macOS Build / Build"
-    - "status-success=Linux Build / Build"
-    - "status-success=continuous-integration/appveyor/pr"
-    - "#approved-reviews-by>=1"
-    - "#changes-requested-reviews-by=0"
-    - base=master
+      - author=dependabot[bot]
+      - label!=do-not-merge
+      - base=master
+      - created-at < 1 day ago
+      - check-success=Lint
+      - check-success~=^macOS-Build
+      - check-success~=^Linux-Build
+      - check-success~=^Windows-Build
+    actions:
+      review:
+        type: APPROVE
+        message: "🤖 Automatically approving dependabot updates"
+      merge:
+        method: squash
+      delete_head_branch: {}
+
+  # -----------------------------------------------------------
+  # RULE 2: OTHER AI AGENTS (Copilot, Gemini, Codex, CodeRabbit)
+  # -----------------------------------------------------------
+  - name: Automatic merge for AI Agents
+    conditions:
+      # STRICT REGEX: Matches only specific trusted bot names.
+      # ^...$ ensures we match the exact name, not "fake-copilot".
+      # (\[bot\])? matches the optional "[bot]" suffix GitHub adds.
+      - "author~=^(copilot|gemini-code-assist|chatgpt-codex-connector|codex-bot|coderabbitai)(\\[bot\\])?$"
+      
+      - label!=do-not-merge
+      - base=master      
+      - check-success=Lint
+      - check-success~=^macOS-Build
+      - check-success~=^Linux-Build
+      - check-success~=^Windows-Build
+    actions:
+      review:
+        type: APPROVE
+        message: "🤖 Automatically approving AI feature update"
+      merge:
+        method: squash
+      delete_head_branch: {}
+
+  # -----------------------------------------------------------
+  # RULE 3: OWNER (Centaurioun)
+  # -----------------------------------------------------------
+  - name: Automatic merge for Centaurioun
+    conditions:
+      - author=Centaurioun
+      - label!=do-not-merge
+      - base=master
+      
+      # Your 2-day cool-down period
+      - created-at < 2 days ago
+      
+      - check-success=Lint
+      - check-success~=^macOS-Build
+      - check-success~=^Linux-Build
+      - check-success~=^Windows-Build
     actions:
       merge:
-        method: merge
-        strict: true
+        method: squash
+      delete_head_branch: {}
