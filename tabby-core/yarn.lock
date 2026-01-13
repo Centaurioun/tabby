@@ -111,6 +111,11 @@ js-yaml@^4.0.0:
   dependencies:
     argparse "^2.0.1"
 
+json-logic-js@2.0.5:
+  version "2.0.5"
+  resolved "https://registry.yarnpkg.com/json-logic-js/-/json-logic-js-2.0.5.tgz#55f0c687dd6f56b02ccdcfdd64171ed998ab5499"
+  integrity sha512-rTT2+lqcuUmj4DgWfmzupZqQDA64AdmYqizzMPWj3DxGdfFNsxPpcNVSaTj4l8W2tG/+hg7/mQhxjU3aPacO6g==
+
 make-plural@^4.3.0:
   version "4.3.0"
   resolved "https://registry.yarnpkg.com/make-plural/-/make-plural-4.3.0.tgz#f23de08efdb0cac2e0c9ba9f315b0dff6b4c2735"
@@ -142,12 +147,13 @@ minimist@^1.2.0:
   resolved "https://registry.yarnpkg.com/minimist/-/minimist-1.2.6.tgz#8637a5b759ea0d6e98702cfb3a9283323c93af44"
   integrity sha512-Jsjnk4bw3YJqYzbdyBiNsPWHPfO++UGG749Cxs6peCu5Xg4nrena6OVxOYxrQTqww0Jmwt+Ref8rggumkTLz9Q==
 
-mixpanel@^0.19.1:
-  version "0.19.1"
-  resolved "https://registry.yarnpkg.com/mixpanel/-/mixpanel-0.19.1.tgz#e7f89dcbc4999df0a67e800e039527a4c229c667"
-  integrity sha512-NK3kJ7/ke1KfLeZyfl9Ec9XALzfI3cclpnpD3Uu0N2kTjlpeIs+zN/mpd1ZxwaiZLK3muccSzmecQ8HzqtMptw==
+mixpanel@^0.20.0:
+  version "0.20.0"
+  resolved "https://registry.yarnpkg.com/mixpanel/-/mixpanel-0.20.0.tgz#80426db8834eb17288ab0d54fec4726f83f22f2d"
+  integrity sha512-va/dizV9tWgumKU3WQR2ZbMsb3NDlSaF7enDwtRiVIz2HCu7Cl3dq8BMV7ufB5LiNWtgtoELHsJvJv+hGhpvxw==
   dependencies:
     https-proxy-agent "7.0.6"
+    json-logic-js "2.0.5"
 
 ms@2.1.2:
   version "2.1.2"
